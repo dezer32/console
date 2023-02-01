@@ -7,4 +7,3 @@ export PATH="$PATH:/Users/dezer/Library/Application Support/JetBrains/Toolbox/sc
 export GOPATH="/Users/dezer/Code/Go"
 export PATH="$PATH:$GOPATH/bin"
 
-#export GOPRIVATE="github.com/dezer32/tinkoff-invest-api,github.com/dezer32/go-config"
