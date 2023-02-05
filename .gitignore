@@ -1,1 +1,11 @@
+.idea
+.buildpath
+.project
+.settings
+.vagrant/machines
+.DS_Store
+nbproject
+.thumbs
+
 *
+

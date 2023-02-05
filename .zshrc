@@ -1,3 +1,6 @@
+# if show error "Insecure direcotry"
+# compaudit | xargs chmod g-w
+
 #Для подгрузки автокомплита с homebrew
 #сперва проверяем наличие brew
 if type brew &>/dev/null
@@ -179,7 +182,7 @@ export PS1=$'\n'"%B%{$fg[green]%}%n%{$reset_color%}@%B%{$fg[green]%}%m%{$reset_c
 
 #autoload -Uz compinit; compinit
 
-[[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
+#[[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
 
 
 # The next line updates PATH for Yandex Cloud CLI.
