@@ -1,21 +1,20 @@
 [user]
 	name = "Vladislav Kuzmenko"
 	email = vladislav.k@fxbackoffice.com
+  signingkey = D9808F0DE42AFF6B17EE6A0867057DFF265A211E
 [init]
 	defaultBranch = master
 [pull]
 	rebase = false
-;[commit]
-;	gpgsign = true
+[commit]
+	gpgsign = true
 [push]
 	default = current
 	autoSetupRemote = true
 [gpg]
 	program = /opt/homebrew/bin/gpg
-[url "ssh://git@github.com/dezer32"]
-	insteadOf = https://github.com/dezer32
 [core]
-	excludesfile = /Users/vladislav.k/.gitignore
+;	excludesfile = /Users/vladislav.k/.gitignore
 	editor = vim
 [alias]
 	co = checkout
