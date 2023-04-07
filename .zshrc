@@ -8,6 +8,9 @@ then
 FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 fi
 
+#Plugins
+plugins=(git zsh-syntax-highlighting)
+
 # Запуск автозагрузки автокомплита
 autoload -U compinit promptinit
 compinit
@@ -137,10 +140,10 @@ alias df='df -k --print-type --human-readable'
 alias -g  HE='2>>( sed -ue "s/.*/$fg_bold[red]&$reset_color/" 1>&2 )' # Highlight Errors
 
 # разукрашиваем команды с помощью grc
-if [ -f /usr/bin/grc ]; then
+if [ -f /opt/homebrew/bin/grc ]; then
 alias ping='grc --colour=auto ping'
 alias traceroute='grc --colour=auto traceroute'
-alias make='grc --colour=auto make'
+#alias make='grc --colour=auto make'
 alias diff='grc --colour=auto diff»'
 alias cvs='grc --colour=auto cvs'
 alias netstat='grc --colour=auto netstat'
@@ -186,11 +189,15 @@ export PS1=$'\n'"%B%{$fg[green]%}%n%{$reset_color%}@%B%{$fg[green]%}%m%{$reset_c
 
 
 # The next line updates PATH for Yandex Cloud CLI.
-if [ -f '/Users/dezer/yandex-cloud/path.bash.inc' ]; then source '/Users/dezer/yandex-cloud/path.bash.inc'; fi
+#if [ -f '/Users/dezer/yandex-cloud/path.bash.inc' ]; then source '/Users/dezer/yandex-cloud/path.bash.inc'; fi
 
 # The next line enables shell command completion for yc.
-if [ -f '/Users/dezer/yandex-cloud/completion.zsh.inc' ]; then source '/Users/dezer/yandex-cloud/completion.zsh.inc'; fi
+#if [ -f '/Users/dezer/yandex-cloud/completion.zsh.inc' ]; then source '/Users/dezer/yandex-cloud/completion.zsh.inc'; fi
 
 export GPG_TTY=$(tty)
 export EDITOR=vim
 export PATH=${HOME}/.composer/vendor/bin:${PATH}
+
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
+
