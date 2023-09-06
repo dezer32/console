@@ -212,3 +212,5 @@ export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 
 export ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX=YES
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

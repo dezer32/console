@@ -8,3 +8,6 @@ Brew packages:
 - tldr
 - tmux
 - ripgrep
+- lazygit
+- gdu
+- bottom
