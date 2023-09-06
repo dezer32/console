@@ -1,10 +1,10 @@
 Nerd font "Hack"
 
 Brew packages:
-1. htop
-2. jq
-3. rclone
-4. syncthing
-5. tldr
-6. tmux
-
+- htop
+- jq
+- rclone
+- syncthing
+- tldr
+- tmux
+- ripgrep
