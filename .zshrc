@@ -173,9 +173,26 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export COMPOSER_MEMORY_LIMIT=-1
 #export PS1="%n@%m:%0~\$ "
 #export PS1="%{$fg[green]%}%n%{$reset_color%}@%{$fg[green]%}%m%{$reset_color%}:%{$fg[blue]%}%0~%{$reset_color%}$ "
-export PS1=$'\n'"%B%{$fg[green]%}%n%{$reset_color%}@%B%{$fg[green]%}%m%{$reset_color%}:%B%{$fg[cyan]%}%0~%{$reset_color%}"$'\n'"%B%{$fg[blue]%}❯%b"
+#export PS1=$'\n'"%B%{$fg[green]%}%n%{$reset_color%}@%B%{$fg[green]%}%m%{$reset_color%}:%B%{$fg[cyan]%}%0~%{$reset_color%}"$'\n'"%B%{$fg[blue]%}❯%b "
 
-#export PS1=$'\n'"%B%{$fg[green]%}my%{$reset_color%}@%B%{$fg[green]%}computer%{$reset_color%}:%B%{$fg[cyan]%}%0~%{$reset_color%}"$'\n'"%B%{$fg[blue]%}❯%b"
+
+#export PS1=$'\n'"%B%{$fg[green]%}my%{$reset_color%}@%B%{$fg[green]%}computer%{$reset_color%}:%B%{$fg[cyan]%}%0~%{$reset_color%}"$'\n'"%B%(?.%F{blue}.%F{red})❯%b "
+
+autoload -Uz vcs_info
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+setopt prompt_subst
+
+#export PS1=$'\n'"%B%{$fg[green]%}my%{$reset_color%}@%B%{$fg[green]%}computer%{$reset_color%}:%B%{$fg[cyan]%}%0~%{$reset_color%} "$vcs_info_msg_0_$'\n'"%B%(?.%F{blue}.%F{red})❯%b "
+
+
+zstyle ':vcs_info:git:*' formats '%F{240}(%b)%f'
+zstyle ':vcs_info:*' enable git
+
+export PS1=$'\n'"%B%{$fg[green]%}my%{$reset_color%}@%B%{$fg[green]%}computer%{$reset_color%}:%B%{$fg[cyan]%}%0~%{$reset_color%} "\$vcs_info_msg_0_$'\n'"%B%(?.%F{blue}.%F{red})❯%b "
+
+
+export RPROMPT='%*'
 
 #autoload -Uz compinit; compinit
 
