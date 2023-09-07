@@ -11,3 +11,4 @@ Brew packages:
 - lazygit
 - gdu
 - bottom
+- fzf
