@@ -189,7 +189,7 @@ setopt prompt_subst
 zstyle ':vcs_info:git:*' formats '%F{240}(%b)%f'
 zstyle ':vcs_info:*' enable git
 
-export PS1=$'\n'"%B%{$fg[green]%}my%{$reset_color%}@%B%{$fg[green]%}computer%{$reset_color%}:%B%{$fg[cyan]%}%0~%{$reset_color%} "\$vcs_info_msg_0_$'\n'"%B%(?.%F{blue}.%F{red})❯%b "
+export PS1=$'\n'"%B%F{33}%n%{$reset_color%}@%B%F{33}%m%{$reset_color%}:%B%{$fg[cyan]%}%0~%{$reset_color%} "\$vcs_info_msg_0_$'\n'"%B%(?.%F{33}.%F{red})%b "
 
 
 export RPROMPT='%*'
