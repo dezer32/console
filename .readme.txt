@@ -12,3 +12,5 @@ Brew packages:
 - gdu
 - bottom
 - fzf
+- lnav
+- grc
