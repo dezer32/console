@@ -1,0 +1,48 @@
+"set number                        " line numbers
+set nu
+set relativenumber
+
+set hlsearch                      " highlight search occurrences
+set ignorecase                    " ignore case in search patterns
+set smartcase                     " no ignore case when pattern is uppercase
+set incsearch                     " show search results while typing
+set wrapscan                      " searches wrap around the end of the file
+
+set gdefault                      " substitute all occurrences in line per default
+set history=10000                 " keep x lines of command line history
+set scrolloff=5 sidescrolloff=10  " keep some lines before and after the cursor visible
+set clipboard=unnamedplus,unnamed,ideaput " integrate with system clipboard
+
+set quickscope
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+let g:qs_accepted_chars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+
+set ideajoin
+set ideastatusicon=gray
+
+" set <leader> to <space>
+let mapleader = " "
+
+" edit ideavim config
+nnoremap <leader>vv :e ~/.ideavimrc<CR>
+nnoremap <leader>vr :source ~/.ideavimrc<CR>
+
+" esc by jj
+inoremap jj <esc>
+
+nnoremap <leader>w :w<CR>
+nnoremap <leader>x :x<CR>
+
+Plug 'preservim/nerdtree'
+nnoremap <leader>e :NERDTree<CR>
+let NERDTreeMapActivateNode="\l"
+let NERDTreeMapCloseDir="\h"
+
+Plug 'easymotion/vim-easymotion'
+map <leader>f <Plug>(easymotion-prefix)
+
+Plug 'tpope/vim-surround'
+
+Plug 'terryma/vim-multiple-cursors'
+
+Plug 'tpope/vim-commentary'

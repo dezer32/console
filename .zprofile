@@ -7,3 +7,4 @@ export PATH="$PATH:/Users/dezer/Library/Application Support/JetBrains/Toolbox/sc
 export GOPATH="/Users/dezer/Code/Go"
 export PATH="$PATH:$GOPATH/bin"
 
+#alias composer="docker run -ti --rm -v$(pwd):/app -w /app composer:2.6"
