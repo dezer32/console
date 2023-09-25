@@ -21,7 +21,7 @@
   },
   "HotKey Window Floats" : true,
   "Right Option Key Sends" : 0,
-  "Show Status Bar" : true,
+  "Show Status Bar" : false,
   "Character Encoding" : 4,
   "Selection Color" : {
     "Green Component" : 0.12343578040599823,
@@ -92,6 +92,7 @@
             "maxwidth" : 1.7976931348623157e+308
           },
           "layout advanced configuration dictionary value" : {
+            "font" : ".AppleSystemUIFont 12",
             "algorithm" : 0
           }
         }
@@ -137,8 +138,10 @@
       }
     ],
     "advanced configuration" : {
+      "remove empty components" : false,
       "font" : ".AppleSystemUIFont 12",
-      "algorithm" : 0
+      "algorithm" : 0,
+      "auto-rainbow style" : 0
     }
   },
   "Hide After Opening" : false,
@@ -181,13 +184,11 @@
       "Action" : 10,
       "Text" : "[1;6A"
     },
-    "0x37-0x40000" : {
+    "0x38-0x40000-0x1c" : {
+      "Version" : 0,
       "Action" : 11,
-      "Text" : "0x1f"
-    },
-    "0x32-0x40000" : {
-      "Action" : 11,
-      "Text" : "0x00"
+      "Text" : "0x02 0x38",
+      "Label" : ""
     },
     "0xf709-0x20000" : {
       "Action" : 10,
@@ -221,13 +222,23 @@
       "Action" : 11,
       "Text" : "0x1b 0x1b 0x5b 0x42"
     },
-    "0x38-0x40000" : {
+    "0x30-0x40000-0x1d" : {
+      "Version" : 1,
       "Action" : 11,
-      "Text" : "0x7f"
+      "Text" : "0x02 0x30",
+      "Label" : ""
     },
-    "0x33-0x40000" : {
+    "0x35-0x40000-0x17" : {
+      "Version" : 0,
       "Action" : 11,
-      "Text" : "0x1b"
+      "Text" : "0x02 0x35",
+      "Label" : ""
+    },
+    "0x74-0x100000-0x11" : {
+      "Version" : 1,
+      "Action" : 11,
+      "Text" : "0x02 0x63",
+      "Label" : ""
     },
     "0xf703-0x220000" : {
       "Action" : 10,
@@ -245,6 +256,12 @@
       "Action" : 10,
       "Text" : "[1;6D"
     },
+    "0x37-0x40000-0x1a" : {
+      "Version" : 0,
+      "Action" : 11,
+      "Text" : "0x02 0x37",
+      "Label" : ""
+    },
     "0xf729-0x40000" : {
       "Action" : 10,
       "Text" : "[1;5H"
@@ -253,13 +270,21 @@
       "Action" : 10,
       "Text" : "[1;2R"
     },
-    "0x34-0x40000" : {
-      "Action" : 11,
-      "Text" : "0x1c"
-    },
     "0xf700-0x280000" : {
       "Action" : 11,
       "Text" : "0x1b 0x1b 0x5b 0x41"
+    },
+    "0x39-0x40000-0x19" : {
+      "Version" : 1,
+      "Action" : 11,
+      "Text" : "0x02 0x39",
+      "Label" : ""
+    },
+    "0x32-0x40000-0x13" : {
+      "Version" : 0,
+      "Action" : 11,
+      "Text" : "0x02 0x32",
+      "Label" : ""
     },
     "0x2d-0x40000" : {
       "Action" : 11,
@@ -285,17 +310,37 @@
       "Action" : 10,
       "Text" : "[1;2S"
     },
+    "0x36-0x40000-0x16" : {
+      "Version" : 0,
+      "Action" : 11,
+      "Text" : "0x02 0x36",
+      "Label" : ""
+    },
     "0xf70a-0x20000" : {
       "Action" : 10,
       "Text" : "[18;2~"
     },
-    "0x35-0x40000" : {
+    "0x34-0x40000-0x15" : {
+      "Version" : 0,
       "Action" : 11,
-      "Text" : "0x1d"
+      "Text" : "0x02 0x34",
+      "Label" : ""
+    },
+    "0x77-0x100000-0xd" : {
+      "Version" : 1,
+      "Action" : 11,
+      "Text" : "0x02 0x78",
+      "Label" : ""
     },
     "0xf70f-0x20000" : {
       "Action" : 10,
       "Text" : "[24;2~"
+    },
+    "0x31-0x40000-0x12" : {
+      "Version" : 1,
+      "Action" : 11,
+      "Text" : "0x02 0x31",
+      "Label" : ""
     },
     "0xf703-0x240000" : {
       "Action" : 10,
@@ -313,10 +358,6 @@
       "Action" : 10,
       "Text" : "[1;2F"
     },
-    "0x36-0x40000" : {
-      "Action" : 11,
-      "Text" : "0x1e"
-    },
     "0xf708-0x20000" : {
       "Action" : 10,
       "Text" : "[15;2~"
@@ -328,6 +369,12 @@
     "0xf70b-0x20000" : {
       "Action" : 10,
       "Text" : "[19;2~"
+    },
+    "0x33-0x40000-0x14" : {
+      "Version" : 0,
+      "Action" : 11,
+      "Text" : "0x02 0x33",
+      "Label" : ""
     },
     "0xf702-0x240000" : {
       "Action" : 10,
@@ -386,7 +433,7 @@
     "Red Component" : 0.97170770168304443,
     "Blue Component" : 0.095619738101959256
   },
-  "Name" : "OMZ Profile",
+  "Name" : "Dezer profile",
   "Blinking Cursor" : true,
   "Guid" : "F4946B07-793F-4C06-B4FC-59D230917788",
   "Idle Code" : 0,
@@ -468,6 +515,7 @@
   "HotKey Alternate Shortcuts" : [
 
   ],
+  "Show Timestamps" : 0,
   "Visual Bell" : true,
   "Custom Directory" : "No",
   "Ansi 5 Color" : {
