@@ -1,15 +1,9 @@
-# if show error "Insecure direcotry"
-# compaudit | xargs chmod g-w
-
 #Для подгрузки автокомплита с homebrew
 #сперва проверяем наличие brew
 if type brew &>/dev/null
 then
 FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 fi
-
-#Plugins
-plugins=(git zsh-syntax-highlighting)
 
 # Запуск автозагрузки автокомплита
 autoload -U compinit promptinit
@@ -140,10 +134,10 @@ alias df='df -k --print-type --human-readable'
 alias -g  HE='2>>( sed -ue "s/.*/$fg_bold[red]&$reset_color/" 1>&2 )' # Highlight Errors
 
 # разукрашиваем команды с помощью grc
-if [ -f /opt/homebrew/bin/grc ]; then
+if [ -f /usr/bin/grc ]; then
 alias ping='grc --colour=auto ping'
 alias traceroute='grc --colour=auto traceroute'
-#alias make='grc --colour=auto make'
+alias make='grc --colour=auto make'
 alias diff='grc --colour=auto diff»'
 alias cvs='grc --colour=auto cvs'
 alias netstat='grc --colour=auto netstat'
@@ -179,25 +173,46 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export COMPOSER_MEMORY_LIMIT=-1
 #export PS1="%n@%m:%0~\$ "
 #export PS1="%{$fg[green]%}%n%{$reset_color%}@%{$fg[green]%}%m%{$reset_color%}:%{$fg[blue]%}%0~%{$reset_color%}$ "
-export PS1=$'\n'"%B%{$fg[green]%}%n%{$reset_color%}@%B%{$fg[green]%}%m%{$reset_color%}:%B%{$fg[cyan]%}%0~%{$reset_color%}"$'\n'"%B%{$fg[blue]%}❯%b"
+#export PS1=$'\n'"%B%{$fg[green]%}%n%{$reset_color%}@%B%{$fg[green]%}%m%{$reset_color%}:%B%{$fg[cyan]%}%0~%{$reset_color%}"$'\n'"%B%{$fg[blue]%}❯%b "
 
-#export PS1=$'\n'"%B%{$fg[green]%}my%{$reset_color%}@%B%{$fg[green]%}computer%{$reset_color%}:%B%{$fg[cyan]%}%0~%{$reset_color%}"$'\n'"%B%{$fg[blue]%}❯%b"
+
+#export PS1=$'\n'"%B%{$fg[green]%}my%{$reset_color%}@%B%{$fg[green]%}computer%{$reset_color%}:%B%{$fg[cyan]%}%0~%{$reset_color%}"$'\n'"%B%(?.%F{blue}.%F{red})❯%b "
+
+autoload -Uz vcs_info
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+setopt prompt_subst
+
+#export PS1=$'\n'"%B%{$fg[green]%}my%{$reset_color%}@%B%{$fg[green]%}computer%{$reset_color%}:%B%{$fg[cyan]%}%0~%{$reset_color%} "$vcs_info_msg_0_$'\n'"%B%(?.%F{blue}.%F{red})❯%b "
+
+
+zstyle ':vcs_info:git:*' formats '%F{240}(%b)%f'
+zstyle ':vcs_info:*' enable git
+
+#export PS1=$'\n'"%B%{$fg[green]%}%n%{$reset_color%}@%B%{$fg[green]%}%m%{$reset_color%}:%B%{$fg[cyan]%}%0~%{$reset_color%} "\$vcs_info_msg_0_$'\n'"%B%(?.%F{blue}.%F{red})❯%b "
+
+export PS1=$'\n'"%B%F{33}%n%F{250}@%B%F{33}%m%F{250}:%B%{$fg[cyan]%}%0~%{$reset_color%} "\$vcs_info_msg_0_$'\n'"%B%(?.%F{33}.%F{red})❯%b "
+
+
+export RPROMPT='%*'
 
 #autoload -Uz compinit; compinit
 
-#[[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
+[[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
 
 
 # The next line updates PATH for Yandex Cloud CLI.
-#if [ -f '/Users/dezer/yandex-cloud/path.bash.inc' ]; then source '/Users/dezer/yandex-cloud/path.bash.inc'; fi
+if [ -f '/Users/dezer/yandex-cloud/path.bash.inc' ]; then source '/Users/dezer/yandex-cloud/path.bash.inc'; fi
 
 # The next line enables shell command completion for yc.
-#if [ -f '/Users/dezer/yandex-cloud/completion.zsh.inc' ]; then source '/Users/dezer/yandex-cloud/completion.zsh.inc'; fi
+if [ -f '/Users/dezer/yandex-cloud/completion.zsh.inc' ]; then source '/Users/dezer/yandex-cloud/completion.zsh.inc'; fi
 
 export GPG_TTY=$(tty)
 export EDITOR=vim
 export PATH=${HOME}/.composer/vendor/bin:${PATH}
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+
+export ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX=YES
 
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
-
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
