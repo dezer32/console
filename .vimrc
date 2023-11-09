@@ -153,3 +153,6 @@ let g:lightline = {
 let g:php_version_id = 81000
 
 let mapleader=" "
+
+inoremap jj <esc>
+inoremap jk <esc>

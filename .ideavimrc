@@ -1,6 +1,6 @@
 "set number                        " line numbers
 set nu
-set relativenumber
+" set relativenumber
 
 set hlsearch                      " highlight search occurrences
 set ignorecase                    " ignore case in search patterns
@@ -24,6 +24,65 @@ set ideastatusicon=gray
 
 " set <leader> to <space>
 let mapleader = " "
+nnoremap <leader>d ""d
+nnoremap <leader>D ""D
+vnoremap <leader>d ""d
+
+" nnoremap x "_x
+" nnoremap d "_d
+" nnoremap D "_D
+" vnoremap d "_d
+
+" nnoremap <leader>3 :action ActivateTerminalToolWindow<CR>
+
+iunmap <c-;>
+
+map й q
+map ц w
+map у e
+map к r
+map е t
+map н y
+map г u
+map ш i
+map щ o
+map з p
+map х [
+map ъ ]
+map ф a
+map ы s
+map в d
+map а f
+map п g
+map р h
+map о j
+map л k
+map д l
+map ж ;
+map э '
+map ё \
+map я z
+map ч x
+map с c
+map м v
+map и b
+map т n
+map ь m
+map б ,
+map ю .
+map Й Q
+map Ц W
+map У E
+map К R
+map Е T
+map Н Y
+map Г U
+map Ш I
+map Щ O
+map З P
+map Х {
+map Ъ }
+map Ф A
 
 " edit ideavim config
 nnoremap <leader>vv :e ~/.ideavimrc<CR>
@@ -31,17 +90,30 @@ nnoremap <leader>vr :source ~/.ideavimrc<CR>
 
 " esc by jj
 inoremap jj <esc>
+inoremap оо <esc>
+inoremap jk <esc>
+inoremap ол <esc>
 
 nnoremap <leader>w :w<CR>
 nnoremap <leader>x :x<CR>
 
+map gd <Action>(GotoDeclaration)
+map <leader>fm <Action>(ReformatCode)
+map <leader>ff <Action>(GotoFile)
+map <leader>fc <Action>(GotoClass)
+map <leader>fa <Action>(GotoAction)
+map <leader>fb <Action>(RecentFiles)
+
 Plug 'preservim/nerdtree'
-nnoremap <leader>e :NERDTree<CR>
+noremap <leader>e :NERDTreeFind<CR>
 let NERDTreeMapActivateNode="\l"
 let NERDTreeMapCloseDir="\h"
 
 Plug 'easymotion/vim-easymotion'
-map <leader>f <Plug>(easymotion-prefix)
+map f <Plug>(easymotion-bd-fl)
+map F <Plug>(easymotion-bd-f)
+map <leader>fj <Plug>(easymotion-j)
+map <leader>fk <Plug>(easymotion-k)
 
 Plug 'tpope/vim-surround'
 

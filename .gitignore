@@ -32,6 +32,7 @@ Public/
 Sync 
 /*.log
 /.bashrc
+/.npm
 
 .docker-sync-global.yml
 .docker/
@@ -43,4 +44,5 @@ Sync
 .viminfo
 .wakatime.bdb
 .config
+.zprofile
 
