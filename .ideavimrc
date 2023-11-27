@@ -1,0 +1,130 @@
+"set number                        " line numbers
+set nu
+set relativenumber
+
+set hlsearch                      " highlight search occurrences
+set ignorecase                    " ignore case in search patterns
+set smartcase                     " no ignore case when pattern is uppercase
+set incsearch                     " show search results while typing
+set wrapscan                      " searches wrap around the end of the file
+
+set gdefault                      " substitute all occurrences in line per default
+set history=10000                 " keep x lines of command line history
+set scrolloff=5 sidescrolloff=10  " keep some lines before and after the cursor visible
+set clipboard=unnamedplus,unnamed,ideaput " integrate with system clipboard
+
+set quickscope
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+let g:qs_accepted_chars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+
+set which-key
+
+set ideajoin
+set ideastatusicon=gray
+
+" set <leader> to <space>
+let mapleader = " "
+nnoremap <leader>d ""d
+nnoremap <leader>D ""D
+vnoremap <leader>d ""d
+
+" nnoremap x "_x
+" nnoremap d "_d
+" nnoremap D "_D
+" vnoremap d "_d
+
+" nnoremap <leader>3 :action ActivateTerminalToolWindow<CR>
+
+iunmap <c-;>
+
+map й q
+map ц w
+map у e
+map к r
+map е t
+map н y
+map г u
+map ш i
+map щ o
+map з p
+map х [
+map ъ ]
+map ф a
+map ы s
+map в d
+map а f
+map п g
+map р h
+map о j
+map л k
+map д l
+map ж ;
+map э '
+map ё \
+map я z
+map ч x
+map с c
+map м v
+map и b
+map т n
+map ь m
+map б ,
+map ю .
+map Й Q
+map Ц W
+map У E
+map К R
+map Е T
+map Н Y
+map Г U
+map Ш I
+map Щ O
+map З P
+map Х {
+map Ъ }
+map Ф A
+
+" edit ideavim config
+nnoremap <leader>vv :e ~/.ideavimrc<CR>
+nnoremap <leader>vr :source ~/.ideavimrc<CR>
+
+" esc by jj
+inoremap jj <esc>
+inoremap оо <esc>
+inoremap jk <esc>
+" inoremap ол <esc>
+
+nnoremap <leader>w :w<CR>
+nnoremap <leader>ц :w<CR>
+nnoremap <leader>x :x<CR>
+nnoremap <leader>ч :x<CR>
+
+map <leader>db <Action>(ToggleLineBreakpoint)
+map gd <Action>(GotoDeclaration)
+map gi <Action>(GotoImplementation)
+map <leader>fm <Action>(ReformatCode)
+map <leader>ff <Action>(GotoFile)
+map <leader>fw <Action>(FindInPath)
+map <leader>fc <Action>(GotoClass)
+map <leader>fa <Action>(GotoAction)
+map <leader>fb <Action>(RecentFiles)
+map <leader>fs <Action>(Scratch.ShowFilesPopup)
+
+map <leader>ra <Action>(RenameElement)
+
+Plug 'preservim/nerdtree'
+noremap <leader>e :NERDTreeFind<CR>
+let NERDTreeMapActivateNode="\l"
+let NERDTreeMapCloseDir="\h"
+
+Plug 'easymotion/vim-easymotion'
+map f <Plug>(easymotion-bd-fl)
+map F <Plug>(easymotion-bd-f2)
+map <leader>fj <Plug>(easymotion-j)
+map <leader>fk <Plug>(easymotion-k)
+
+Plug 'tpope/vim-surround'
+
+Plug 'terryma/vim-multiple-cursors'
+
+Plug 'tpope/vim-commentary'

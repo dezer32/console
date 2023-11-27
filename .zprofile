@@ -21,3 +21,4 @@ export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 export DOCKER_DEFAULT_PLATFORM=linux/arm64/v8
 export GITLAB_ACCESS_TOKEN="glpat-HxGsPKyiyZPK42X5JQ8A"
+export BAT_THEME="gruvbox-dark"

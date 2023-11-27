@@ -22,15 +22,15 @@ endif
 call plug#begin('~/.vim/plugged')
 
 " add this line to your .vimrc file
-Plug 'mattn/emmet-vim'
+"Plug 'mattn/emmet-vim'
 Plug 'preservim/nerdtree'
 "Plug 'ycm-core/YouCompleteMe'
 Plug 'itchyny/lightline.vim'
-Plug 'vim-syntastic/syntastic'
-Plug 'StanAngeloff/php.vim'
+"Plug 'vim-syntastic/syntastic'
+"Plug 'StanAngeloff/php.vim'
 Plug 'noahfrederick/vim-laravel'
-Plug 'phpactor/phpactor'
-Plug 'noahfrederick/vim-composer'
+"Plug 'phpactor/phpactor'
+"Plug 'noahfrederick/vim-composer'
 "Plug 'tpope/vim-dispatch'
 "Plug 'tpope/vim-projectionist'
 
@@ -134,8 +134,8 @@ nnoremap <F3> :noh<return><CR>
 set viminfo='100,<9999,s100
 
 " Map the <Space> key to toggle a selected fold opened/closed.
-nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
-vnoremap <Space> zf
+"nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
+"vnoremap <Space> zf
 
 " Automatically save and load folds
 autocmd BufWinLeave *.* mkview
@@ -150,4 +150,6 @@ let g:lightline = {
 "========
 "php.vim
 "========
-let g:php_version_id = 70400
+let g:php_version_id = 81000
+
+let mapleader=" "

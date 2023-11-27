@@ -189,9 +189,7 @@ setopt prompt_subst
 zstyle ':vcs_info:git:*' formats '%F{240}(%b)%f'
 zstyle ':vcs_info:*' enable git
 
-#export PS1=$'\n'"%B%{$fg[green]%}%n%{$reset_color%}@%B%{$fg[green]%}%m%{$reset_color%}:%B%{$fg[cyan]%}%0~%{$reset_color%} "\$vcs_info_msg_0_$'\n'"%B%(?.%F{blue}.%F{red})❯%b "
-
-export PS1=$'\n'"%B%F{33}%n%F{250}@%B%F{33}%m%F{250}:%B%{$fg[cyan]%}%0~%{$reset_color%} "\$vcs_info_msg_0_$'\n'"%B%(?.%F{33}.%F{red})❯%b "
+export PS1=$'\n'"%B%F{33}%n%{$reset_color%}@%B%F{33}%m%{$reset_color%}:%B%{$fg[cyan]%}%0~%{$reset_color%} "\$vcs_info_msg_0_$'\n'"%B%(?.%F{33}.%F{red})%b "
 
 
 export RPROMPT='%*'
@@ -211,8 +209,13 @@ export GPG_TTY=$(tty)
 export EDITOR=vim
 export PATH=${HOME}/.composer/vendor/bin:${PATH}
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+# export PATH="~/.composer/vendor/bin:$PATH"
 
 export ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX=YES
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+bindkey ^K up-line-or-search 
+bindkey ^J down-line-or-search
+
