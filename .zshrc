@@ -226,5 +226,5 @@ export FZF_CTRL_R_OPTS="
           --header 'Press CTRL-Y to copy command into clipboard'"
 export FZF_ALT_C_OPTS="--preview 'tree -C {}'"
 
-#enable vi mode
-# bindkey -v
+bindkey ^K up-line-or-search
+bindkey ^J down-line-or-search

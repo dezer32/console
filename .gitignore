@@ -32,7 +32,25 @@ Public/
 Sync 
 /*.log
 /.bashrc
-/.npm
+
+.bash_history
+.calc_history
+.cups/
+.hushlogin
+.iterm2_shell_integration.zsh
+.maze-client.env
+.mutagen/
+/.npm/
+.pdepend/
+.pearrc
+.phive/
+.swp
+.syncthing/
+.w3m/
+.zsh_profile
+Default.xml
+OneDrive - Tec Fx Back Office Ltd
+fxbo.gpg
 
 .docker-sync-global.yml
 .docker/
@@ -46,3 +64,4 @@ Sync
 .config
 .zprofile
 
+.idea
