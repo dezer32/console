@@ -12,7 +12,7 @@
 	default = current
 [gpg]
 	program = /opt/homebrew/bin/gpg
-[url "ssh://git@github.com/dezer32"]
-  insteadOf = https://github.com/dezer32
+; [url "ssh://git@github.com/dezer32"]
+  ; insteadOf = https://github.com/dezer32
 [safe]
 	directory = /Users/dezer
