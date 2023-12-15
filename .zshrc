@@ -209,6 +209,7 @@ export GPG_TTY=$(tty)
 export EDITOR=vim
 export PATH=${HOME}/.composer/vendor/bin:${PATH}
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+export PATH=${HOME}/.jetbrains/bin:${PATH}
 
 export ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX=YES
 
