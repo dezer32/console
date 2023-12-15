@@ -212,6 +212,8 @@ export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 export PATH=${HOME}/.jetbrains/bin:${PATH}
 
 export ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX=YES
+export DOCKER_DEFAULT_PLATFORM=linux/amd64
+export BAT_THEME="gruvbox-dark"
 
 # fzf configuration
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
