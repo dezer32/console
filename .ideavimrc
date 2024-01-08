@@ -100,10 +100,12 @@ nnoremap <leader>x :x<CR>
 nnoremap <leader>ч :x<CR>
 
 map <leader>db <Action>(ToggleLineBreakpoint)
-map <leader>rs <Action>(Stop)
-map <leader>rr <Action>(Run)
+map <leader>rr <Action>(RunClass)
+map <leader>rd <Action>(DebugClass)
+map <leader>ls <Action>(Stop)
+map <leader>lr <Action>(Run)
 map <leader>tr <Action>(ContextRun)
-map <leader>rd <Action>(Debug)
+map <leader>ld <Action>(Debug)
 map <leader>td <Action>(ContextDebug)
 
 map gd <Action>(GotoDeclaration)
