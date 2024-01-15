@@ -231,3 +231,10 @@ export FZF_ALT_C_OPTS="--preview 'tree -C {}'"
 
 bindkey ^K up-line-or-search
 bindkey ^J down-line-or-search
+
+
+
+source .zprofile
+
+# export PATH="$(gem env gemhome)/bin:$PATH"
+
