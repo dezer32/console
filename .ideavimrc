@@ -108,6 +108,8 @@ map <leader>tr <Action>(ContextRun)
 map <leader>ld <Action>(Debug)
 map <leader>td <Action>(ContextDebug)
 
+map gx <Action>(GotoDeclarationAction)
+
 map gd <Action>(GotoDeclaration)
 map gi <Action>(GotoImplementation)
 map <leader>fm <Action>(ReformatCode)
