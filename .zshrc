@@ -5,6 +5,9 @@ then
 FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 fi
 
+# Remove write permission
+compaudit | xargs chmod g-w
+
 # Запуск автозагрузки автокомплита
 autoload -U compinit promptinit
 compinit
