@@ -150,6 +150,8 @@ alias tail='grc --colour=auto tail -n 200 -f'
 alias logh="grc head"
 fi
 
+alias vim="nvim"
+
 #Красивый вывод mysql
 export MYSQL_PS1="mysql: \d|> "
 
