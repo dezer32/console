@@ -216,6 +216,7 @@ export PATH=${HOME}/.composer/vendor/bin:${PATH}
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 export PATH=${HOME}/.jetbrains/bin:${PATH}
 export PATH="$HOME/Library/Python/3.9/bin:$PATH"
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 
 export ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX=YES
 export DOCKER_DEFAULT_PLATFORM=linux/arm64/v8
