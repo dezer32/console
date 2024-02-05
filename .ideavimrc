@@ -109,6 +109,7 @@ map <leader>ld <Action>(Debug)
 map <leader>td <Action>(ContextDebug)
 
 map gx <Action>(GotoDeclarationAction)
+map gl <Action>(ClickLink)
 
 map gd <Action>(GotoDeclaration)
 map gi <Action>(GotoImplementation)
