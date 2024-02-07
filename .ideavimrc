@@ -123,6 +123,8 @@ map <leader>fs <Action>(Scratch.ShowFilesPopup)
 
 map <leader>ra <Action>(RenameElement)
 
+map <A-j> <Action>(EditorSelectWord)
+
 Plug 'preservim/nerdtree'
 noremap <leader>e :NERDTreeFind<CR>
 let NERDTreeMapActivateNode="\l"
