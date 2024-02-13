@@ -212,6 +212,7 @@ if [ -f '/Users/dezer/yandex-cloud/completion.zsh.inc' ]; then source '/Users/de
 
 export GPG_TTY=$(tty)
 export EDITOR=vim
+export GOPATH=${HOME}/Code/go
 export PATH=${HOME}/.composer/vendor/bin:${PATH}
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 export PATH=${HOME}/.jetbrains/bin:${PATH}
