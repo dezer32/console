@@ -2,13 +2,12 @@
 -- Spoons --
 ------------
 
-local VimMode = hs.loadSpoon("VimMode")
-local vim = VimMode:new()
-
-vim:enterWithSequence("jk")
+------------
+------------
+------------
 
 local vimouse = require("plugins.vimouse")
-vimouse("cmd", "m")
+vimouse("cmd", "M")
 
 hs.window.animationDuration = 0
 hs.window.setShadows(false)
