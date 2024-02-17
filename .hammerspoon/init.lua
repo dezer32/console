@@ -4,6 +4,11 @@ local hyper = { "cmd", "shift", "ctrl" }
 -- Spoons --
 ------------
 
+hs.loadSppon("Caffeine")
+hs.hotkey.bind(hyper, "C", function ()
+  spoon.Caffeine:
+end)
+
 ------------
 ------------
 ------------
@@ -30,8 +35,8 @@ function reloadConfig(files)
 	end
 end
 
-myWatcher = hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()
-hs.alert.show("Config loaded")
+-- myWatcher = hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()
+-- hs.alert.show("Config loaded")
 
 ---------------------------
 -- Application managment --
