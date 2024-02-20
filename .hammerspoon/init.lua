@@ -1,4 +1,5 @@
 local hyper = { "cmd", "shift", "ctrl" }
+local cc = { "cmd", "ctrl" }
 
 ------------
 -- Spoons --
@@ -9,13 +10,13 @@ local hyper = { "cmd", "shift", "ctrl" }
 ------------
 
 local vimouse = require("plugins.vimouse")
-vimouse("cmd", "M")
+vimouse(cc, "M")
 
 hs.window.animationDuration = 0
 hs.window.setShadows(false)
 
 require("plugins.caffeine")
-hs.hotkey.bind(hyper, "C", function()
+hs.hotkey.bind(cc, "C", function()
   toggleCaffeine()
 end)
 
@@ -43,7 +44,7 @@ hs.alert.show("Config loaded")
 ---------------------------
 
 function bindAppWithNameToKey(name, key)
-  hs.hotkey.bind({ "cmd", "ctrl" }, key, function()
+  hs.hotkey.bind(cc, key, function()
     hs.application.open(name)
   end)
 end
@@ -54,6 +55,7 @@ bindAppWithNameToKey("Standard Notes", "N")
 bindAppWithNameToKey("Dash", "H")
 bindAppWithNameToKey("KeePassXC", "K")
 bindAppWithNameToKey("Telegram", "G")
+bindAppWithNameToKey("Brave Browser", "B")
 
 --------------------------------------------------------------------------------
 -- Window management
