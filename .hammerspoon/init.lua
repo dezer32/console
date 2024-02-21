@@ -56,6 +56,7 @@ bindAppWithNameToKey("Dash", "H")
 bindAppWithNameToKey("KeePassXC", "K")
 bindAppWithNameToKey("Telegram", "G")
 bindAppWithNameToKey("Brave Browser", "B")
+bindAppWithNameToKey("PhpStorm", "P")
 
 --------------------------------------------------------------------------------
 -- Window management
