@@ -168,7 +168,9 @@ fi
 
 #Копирование и вставка инфы в буфер обмена
 function clipcopy() { cat "${1:-/dev/stdin}" | pbcopy; }
+alias cc=clipcopy
 function clippaste() { pbpaste; }
+alias cp clippaste
 
 export PATH="$PATH:$(brew --prefix openssh)/bin"
 export SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh
@@ -242,7 +244,7 @@ bindkey ^J down-line-or-search
 
 
 
-source .zprofile
+source ~/.zprofile
 
 # export PATH="$(gem env gemhome)/bin:$PATH"
 
