@@ -28,10 +28,10 @@ nnoremap <leader>d ""d
 nnoremap <leader>D ""D
 vnoremap <leader>d ""d
 
-" nnoremap x "_x
-" nnoremap d "_d
-" nnoremap D "_D
-" vnoremap d "_d
+nnoremap x "_x
+nnoremap d "_d
+nnoremap D "_D
+vnoremap d "_d
 
 " nnoremap <leader>3 :action ActivateTerminalToolWindow<CR>
 
@@ -85,8 +85,8 @@ map Ъ }
 map Ф A
 
 " edit ideavim config
-nnoremap <leader>vv :e ~/.ideavimrc<CR>
-nnoremap <leader>vr :source ~/.ideavimrc<CR>
+nnoremap <leader>iv :e ~/.ideavimrc<CR>
+nnoremap <leader>ir :source ~/.ideavimrc<CR>
 
 " esc by jj
 inoremap jj <esc>
@@ -99,7 +99,7 @@ nnoremap <leader>ц :w<CR>
 nnoremap <leader>x :x<CR>
 nnoremap <leader>ч :x<CR>
 
-map <leader>db <Action>(ToggleLineBreakpoint)
+"map <leader>db <Action>(ToggleLineBreakpoint)
 map <leader>rr <Action>(RunClass)
 map <leader>rd <Action>(DebugClass)
 map <leader>ls <Action>(Stop)
@@ -121,6 +121,14 @@ map <leader>fa <Action>(GotoAction)
 map <leader>fb <Action>(RecentFiles)
 map <leader>fs <Action>(Scratch.ShowFilesPopup)
 
+nnoremap <Leader>/ :nohlsearch<cr>
+
+" Splitting Windows
+nmap <Leader>\ :vsplit<CR>
+nmap <Leader>v :vsplit<CR>
+nmap <Leader>- :split<CR>
+nmap <Leader>h :split<CR>
+
 map <leader>ra <Action>(RenameElement)
 
 map <A-j> <Action>(EditorSelectWord)
@@ -131,8 +139,8 @@ let NERDTreeMapActivateNode="\l"
 let NERDTreeMapCloseDir="\h"
 
 Plug 'easymotion/vim-easymotion'
-map f <Plug>(easymotion-bd-fl)
-map F <Plug>(easymotion-bd-f2)
+nmap f <Plug>(easymotion-bd-fl)
+nmap F <Plug>(easymotion-bd-f2)
 map <leader>fj <Plug>(easymotion-j)
 map <leader>fk <Plug>(easymotion-k)
 
