@@ -1,5 +1,6 @@
 local hyper = { "cmd", "shift", "ctrl" }
 local cc = { "cmd", "ctrl" }
+local co = { "shift", "alt" }
 
 ------------
 -- Spoons --
@@ -16,7 +17,7 @@ hs.window.animationDuration = 0
 hs.window.setShadows(false)
 
 require("plugins.caffeine")
-hs.hotkey.bind(cc, "C", function()
+hs.hotkey.bind(co, "C", function()
 	toggleCaffeine()
 end)
 
@@ -44,7 +45,7 @@ hs.alert.show("Config loaded")
 ---------------------------
 
 function bindAppWithNameToKey(name, key)
-	hs.hotkey.bind(cc, key, function()
+	hs.hotkey.bind(co, key, function()
 		hs.application.open(name)
 	end)
 end
