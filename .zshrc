@@ -170,7 +170,7 @@ fi
 function clipcopy() { cat "${1:-/dev/stdin}" | pbcopy; }
 alias cc=clipcopy
 function clippaste() { pbpaste; }
-alias cp clippaste
+alias cp=clippaste
 
 export PATH="$PATH:$(brew --prefix openssh)/bin"
 export SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh
