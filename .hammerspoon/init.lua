@@ -59,6 +59,7 @@ bindAppWithNameToKey("GoLand", "G")
 bindAppWithNameToKey("Brave Browser", "B")
 bindAppWithNameToKey("PhpStorm", "P")
 bindAppWithNameToKey("Telegram", "M")
+bindAppWithNameToKey("Obsidian", "O")
 --------------------------------------------------------------------------------
 -- Window management
 
