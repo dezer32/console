@@ -1,16 +1,33 @@
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 #Для подгрузки автокомплита с homebrew
 #сперва проверяем наличие brew
 if type brew &>/dev/null
 then
-FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+FPATH="$HOMEBREW_PREFIX/share/zsh/site-functions:${FPATH}"
+FPATH="$HOMEBREW_PREFIX/share/zsh-completions:$FPATH"
 fi
 
 # Remove write permission
 # compaudit | xargs chmod g-w
 
-# Запуск автозагрузки автокомплита
-autoload -U compinit promptinit
-compinit
+ENABLE_CORRECTION="true"
+
+# Путь к файлу кэша
+zcompdump="${ZDOTDIR:-${HOME}}/.zcompdump-${HOST}-${ZSH_VERSION}"
+
+# Загрузка кэша compinit, если он существует и не устарел
+if [[ -s "${zcompdump}" ]] && (( $+commands[compinit] )); then
+  autoload -Uz compinit
+  compinit -C -d "${zcompdump}"
+else
+  autoload -Uz compinit
+  compinit -d "${zcompdump}"
+fi
+
+
+# Запуск автокомплита
+autoload -U promptinit
 promptinit;
 
 # загружаем список цветов
@@ -23,13 +40,6 @@ zle -N self-insert url-quote-magic
 # куда же мы без калькулятора
 autoload -U zcalc
 
-#Запуск вывода инфы по гиту
-#autoload -Uz vcs_info
-#zstyle ':vcs_info:*' enable git svn
-#precmd() {
-#    vcs_info
-#}
-#setopt prompt_subst
 
 # Файл для хранения истории
 HISTFILE=~/.zhistory
@@ -106,7 +116,7 @@ zstyle '*' single-ignored show
 autoload -U +X bashcompinit && bashcompinit
 
 #Регистронезависимый автокомплит
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' 
 
 #Настройка вывода для инфо по текущему гиту
 #zstyle ':vcs_info:git*' formats "%{$fg[grey]%}%s:%{$reset_color%}%{$fg[blue]%}%b%{$reset_color%}(%a)%{$fg[green]%}%m%u%c%{$reset_color%}"
@@ -155,43 +165,22 @@ alias vim="nvim"
 #Красивый вывод mysql
 export MYSQL_PS1="mysql: \d|> "
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
-
-ENABLE_CORRECTION="true"
-
-if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
-
-  autoload -Uz compinit
-  compinit
-fi
-
 #Копирование и вставка инфы в буфер обмена
 function clipcopy() { cat "${1:-/dev/stdin}" | pbcopy; }
 alias cc=clipcopy
 function clippaste() { pbpaste; }
 alias cp=clippaste
 
-export PATH="$PATH:$(brew --prefix openssh)/bin"
-export SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh
 
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export COMPOSER_MEMORY_LIMIT=-1
-#export PS1="%n@%m:%0~\$ "
-#export PS1="%{$fg[green]%}%n%{$reset_color%}@%{$fg[green]%}%m%{$reset_color%}:%{$fg[blue]%}%0~%{$reset_color%}$ "
-#export PS1=$'\n'"%B%{$fg[green]%}%n%{$reset_color%}@%B%{$fg[green]%}%m%{$reset_color%}:%B%{$fg[cyan]%}%0~%{$reset_color%}"$'\n'"%B%{$fg[blue]%}❯%b "
-
-
-#export PS1=$'\n'"%B%{$fg[green]%}my%{$reset_color%}@%B%{$fg[green]%}computer%{$reset_color%}:%B%{$fg[cyan]%}%0~%{$reset_color%}"$'\n'"%B%(?.%F{blue}.%F{red})❯%b "
 
 autoload -Uz vcs_info
 precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
 setopt prompt_subst
-
-#export PS1=$'\n'"%B%{$fg[green]%}my%{$reset_color%}@%B%{$fg[green]%}computer%{$reset_color%}:%B%{$fg[cyan]%}%0~%{$reset_color%} "$vcs_info_msg_0_$'\n'"%B%(?.%F{blue}.%F{red})❯%b "
-
 
 zstyle ':vcs_info:git:*' formats '%F{240}(%b)%f'
 zstyle ':vcs_info:*' enable git
@@ -204,13 +193,8 @@ export RPROMPT='%*'
 #autoload -Uz compinit; compinit
 
 [[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
+# [[ /usr/local/bin/docker ]] && source <(docker completion zsh)
 
-
-# The next line updates PATH for Yandex Cloud CLI.
-if [ -f '/Users/dezer/yandex-cloud/path.bash.inc' ]; then source '/Users/dezer/yandex-cloud/path.bash.inc'; fi
-
-# The next line enables shell command completion for yc.
-if [ -f '/Users/dezer/yandex-cloud/completion.zsh.inc' ]; then source '/Users/dezer/yandex-cloud/completion.zsh.inc'; fi
 
 export GPG_TTY=$(tty)
 export EDITOR=vim
@@ -218,9 +202,12 @@ export GOPATH=${HOME}/Code/go
 export PATH=${HOME}/.composer/vendor/bin:${PATH}
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 export PATH=${HOME}/.jetbrains/bin:${PATH}
+# export PATH="$PATH:$(brew --prefix python)/bin"
 export PATH="$HOME/Library/Python/3.9/bin:$PATH"
 export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
-export PATh="/opt/homebrew/opt/libpq/bin:$PATH"
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+export PATH="$PATH:/opt/homebrew/opt/openssh/bin"
+export SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh
 
 export ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX=YES
 export DOCKER_DEFAULT_PLATFORM=linux/arm64/v8
