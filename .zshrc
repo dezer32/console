@@ -91,6 +91,7 @@ setopt always_to_end
 zstyle ':completion:*' special-dirs true
 
 zstyle ':completion:*' list-colors ''
+
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
 
 # disable named-directories autocompletion
@@ -171,6 +172,7 @@ alias cc=clipcopy
 function clippaste() { pbpaste; }
 # alias pp=clippaste
 
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=240'
 
 source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -232,7 +234,6 @@ export FZF_ALT_C_OPTS="--preview 'tree -C {}'"
 
 bindkey ^K up-line-or-search
 bindkey ^J down-line-or-search
-
 
 
 source ~/.zprofile
