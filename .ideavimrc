@@ -19,6 +19,8 @@ let g:qs_accepted_chars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'
 
 set which-key
 
+" set sneak
+
 set ideajoin
 set ideastatusicon=gray
 
