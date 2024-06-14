@@ -163,6 +163,13 @@ fi
 
 alias vim="nvim"
 
+# NVM
+ENABLE_NVM=false
+$ENABLE_NVM && [ -d "$HOME/.nvm" ] || mkdir -p "$HOME/.nvm"
+$ENABLE_NVM && export NVM_DIR="$HOME/.nvm"
+$ENABLE_NVM && [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+$ENABLE_NVM && [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
 #Красивый вывод mysql
 export MYSQL_PS1="mysql: \d|> "
 
