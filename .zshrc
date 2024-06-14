@@ -206,18 +206,18 @@ export NVM_DIR="$HOME/.nvm"
 
 export GPG_TTY=$(tty)
 export EDITOR=vim
-export GOPATH=${HOME}/Code/go
-export PATH=${HOME}/.composer/vendor/bin:${PATH}
-export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
-export PATH=${HOME}/.jetbrains/bin:${PATH}
-# export PATH="$PATH:$(brew --prefix python)/bin"
-export PATH="$HOME/Library/Python/3.9/bin:$PATH"
-export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
-export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
-export PATH="$PATH:/opt/homebrew/opt/openssh/bin"
-export SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh
+export GOPATH="${HOME}/Code/go"
 
-export ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX=YES
+export PATH="${HOME}/.composer/vendor/bin:${PATH}"
+export PATH="${HOME}/.jetbrains/bin:${PATH}"
+export PATH="${HOME}/Library/Python/3.9/bin:$PATH"
+export PATH="${HOMEBREW_PREFIX}/opt/mysql-client/bin:$PATH"
+export PATH="${HOMEBREW_PREFIX}/opt/libpq/bin:$PATH"
+export PATH="${HOMEBREW_PREFIX}/opt/ruby/bin:$PATH"
+export PATH="${HOMEBREW_PREFIX}/opt/openssh/bin:$PATH"
+
+export SSH_AUTH_SOCK="${HOME}/.gnupg/S.gpg-agent.ssh"
+
 export DOCKER_DEFAULT_PLATFORM=linux/arm64/v8
 export BAT_THEME="gruvbox-dark"
 
@@ -242,7 +242,16 @@ bindkey ^K up-line-or-search
 bindkey ^J down-line-or-search
 
 
-source ~/.zprofile
+# iTerm2
+export ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX=YES
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
+
+
+
+[ -f "~/.zprofile" ] && source ~/.zprofile
+[ -f "~/.zalias" ] && source ~/.zalias
+[ -f "~/.alias.local" ] && source ~/.alias.local
+
 
 # export PATH="$(gem env gemhome)/bin:$PATH"
 
