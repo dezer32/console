@@ -30,10 +30,24 @@ nnoremap <leader>d ""d
 nnoremap <leader>D ""D
 vnoremap <leader>d ""d
 
+vnoremap x "_x
 nnoremap x "_x
-nnoremap d "_d
-nnoremap D "_D
-vnoremap d "_d
+"nnoremap d "_d
+"nnoremap D "_D
+
+vnoremap d "+d
+nnoremap d "+d
+vnoremap dd "+dd
+nnoremap dd "+dd
+
+" Use system clipboard by default for y and p operations
+nnoremap yy "+yy
+vnoremap y "+y
+
+nnoremap p "+p
+vnoremap p "+p
+nnoremap P "+P
+vnoremap P "+P
 
 " nnoremap <leader>3 :action ActivateTerminalToolWindow<CR>
 
@@ -125,6 +139,8 @@ map <leader>fs <Action>(Scratch.ShowFilesPopup)
 
 nnoremap <Leader>/ :nohlsearch<cr>
 
+nmap / :action Find<CR>
+
 " Splitting Windows
 nmap <Leader>\ :vsplit<CR>
 nmap <Leader>v :vsplit<CR>
@@ -141,8 +157,8 @@ let NERDTreeMapActivateNode="\l"
 let NERDTreeMapCloseDir="\h"
 
 Plug 'easymotion/vim-easymotion'
-nmap f <Plug>(easymotion-bd-fl)
-nmap F <Plug>(easymotion-bd-f2)
+"nmap f <Plug>(easymotion-bd-fl)
+"nmap F <Plug>(easymotion-bd-f2)
 map <leader>fj <Plug>(easymotion-j)
 map <leader>fk <Plug>(easymotion-k)
 
