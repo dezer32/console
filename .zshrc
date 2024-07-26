@@ -163,6 +163,8 @@ fi
 
 alias vim="nvim"
 
+alias bu="brew update && brew upgrade && brew upgrade --greedy"
+
 function enable_nvm() {
   [ -d "$HOME/.nvm" ] || mkdir -p "$HOME/.nvm"
   export NVM_DIR="$HOME/.nvm"
