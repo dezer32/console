@@ -135,7 +135,9 @@ map <leader>fw <Action>(FindInPath)
 map <leader>fc <Action>(GotoClass)
 map <leader>fa <Action>(GotoAction)
 map <leader>fb <Action>(RecentFiles)
+nmap <leader>fb <Action>(RecentFiles)
 map <leader>fs <Action>(Scratch.ShowFilesPopup)
+map <leader>fu <Action>(FileStructurePopup)
 
 nnoremap <Leader>/ :nohlsearch<cr>
 
@@ -146,6 +148,9 @@ nmap <Leader>\ :vsplit<CR>
 nmap <Leader>v :vsplit<CR>
 nmap <Leader>- :split<CR>
 nmap <Leader>h :split<CR>
+
+map <C-h> <Action>(CollapseRegionRecursively)
+map <C-l> <Action>(ExpandRegion)
 
 map <leader>ra <Action>(RenameElement)
 
