@@ -162,7 +162,7 @@ let NERDTreeMapActivateNode="\l"
 let NERDTreeMapCloseDir="\h"
 
 Plug 'easymotion/vim-easymotion'
-nmap <leader><leader>f <Plug>(easymotion-bd-f2)
+nmap <leader>F <Plug>(easymotion-bd-f2)
 "nmap F <Plug>(easymotion-bd-f2)
 map <leader>fj <Plug>(easymotion-j)
 map <leader>fk <Plug>(easymotion-k)
