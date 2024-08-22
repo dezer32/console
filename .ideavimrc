@@ -30,6 +30,8 @@ nnoremap <leader>d ""d
 nnoremap <leader>D ""D
 vnoremap <leader>d ""d
 
+map <leader>cp <Action>(CopyContentRootPath)
+
 vnoremap x "_x
 nnoremap x "_x
 "nnoremap d "_d
