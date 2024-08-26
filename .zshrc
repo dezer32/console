@@ -8,6 +8,7 @@ if type brew &>/dev/null
 then
 FPATH="$HOMEBREW_PREFIX/share/zsh/site-functions:${FPATH}"
 FPATH="$HOMEBREW_PREFIX/share/zsh-completions:$FPATH"
+FPATH="$HOME/.config/completion:$FPATH"
 fi
 
 # Remove write permission
@@ -164,15 +165,14 @@ alias logh="grc head"
 fi
 
 alias vim="nvim"
+alias lg="lazygit"
 
 alias bu="brew update && brew upgrade && brew upgrade --greedy"
 
-function enable_nvm() {
   [ -d "$HOME/.nvm" ] || mkdir -p "$HOME/.nvm"
   export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-}
 
 #Красивый вывод mysql
 export MYSQL_PS1="mysql: \d|> "

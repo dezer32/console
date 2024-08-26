@@ -30,13 +30,14 @@ nnoremap <leader>d ""d
 nnoremap <leader>D ""D
 vnoremap <leader>d ""d
 
+
 vnoremap x "_x
 nnoremap x "_x
 "nnoremap d "_d
 "nnoremap D "_D
 
-vnoremap d "+d
-nnoremap d "+d
+vnoremap d "_d
+nnoremap d "_d
 vnoremap dd "+dd
 nnoremap dd "+dd
 
