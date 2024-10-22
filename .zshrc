@@ -169,10 +169,13 @@ alias lg="lazygit"
 
 alias bu="brew update && brew upgrade && brew upgrade --greedy"
 
+function enable_nvm ()
+{
   [ -d "$HOME/.nvm" ] || mkdir -p "$HOME/.nvm"
   export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+}
 
 #Красивый вывод mysql
 export MYSQL_PS1="mysql: \d|> "
@@ -214,7 +217,8 @@ export GOPATH="${HOME}/Code/go"
 
 export PATH="${HOME}/.composer/vendor/bin:${PATH}"
 export PATH="${HOME}/.jetbrains/bin:${PATH}"
-export PATH="${HOME}/Library/Python/3.9/bin:$PATH"
+# export PATH="${HOME}/Library/Python/3.9/bin:$PATH"
+export PATH="$(brew --prefix python)/libexec/bin:${PATH}"
 export PATH="${HOMEBREW_PREFIX}/opt/mysql-client/bin:$PATH"
 export PATH="${HOMEBREW_PREFIX}/opt/libpq/bin:$PATH"
 export PATH="${HOMEBREW_PREFIX}/opt/ruby/bin:$PATH"
