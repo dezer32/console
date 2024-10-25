@@ -33,6 +33,8 @@ fi
 autoload -U promptinit
 promptinit;
 
+autoload -U +X bashcompinit && bashcompinit
+
 # загружаем список цветов
 autoload colors && colors
 
@@ -116,8 +118,6 @@ zstyle ':completion:*:*:*:users' ignored-patterns \
 
 # ... unless we really want to.
 zstyle '*' single-ignored show
-
-autoload -U +X bashcompinit && bashcompinit
 
 #Регистронезависимый автокомплит
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' 
