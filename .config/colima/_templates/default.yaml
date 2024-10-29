@@ -111,7 +111,9 @@ forwardAgent: false
 #
 # Colima default behaviour: buildkit enabled
 # Default: {}
-docker: {}
+docker:
+  insecure-registries:
+    - 192.168.1.10:32000
 
 # Virtual Machine type (qemu, vz)
 # NOTE: this is macOS 13 only. For Linux and macOS <13.0, qemu is always used.
