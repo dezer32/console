@@ -30,10 +30,7 @@ nnoremap <leader>d ""d
 nnoremap <leader>D ""D
 vnoremap <leader>d ""d
 
-<<<<<<< HEAD
-=======
 map <leader>cp <Action>(CopyContentRootPath)
->>>>>>> a62e944121d31dc720d9508442df8f3e1f43dcaa
 
 vnoremap x "_x
 nnoremap x "_x
