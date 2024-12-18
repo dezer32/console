@@ -11,6 +11,9 @@ FPATH="$HOMEBREW_PREFIX/share/zsh-completions:$FPATH"
 FPATH="$HOME/.config/completion:$FPATH"
 fi
 
+# [[ /opt/homebrew/bin/orbctl ]] && source <(orbctl completion zsh)
+
+
 # Remove write permission
 # compaudit | xargs chmod g-w
 
@@ -210,6 +213,7 @@ export RPROMPT='%*'
 
 # [[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
 # [[ /usr/local/bin/docker ]] && source <(docker completion zsh)
+# [[ /opt/homebrew/bin/orbctl ]] && source <(orbctl completion zsh)
 
 export GPG_TTY=$(tty)
 export EDITOR=vim
