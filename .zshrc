@@ -206,8 +206,9 @@ zstyle ':vcs_info:*' enable git
 
 export PS1=$'\n'"%B%F{33}%n%{$reset_color%}@%B%F{33}%m%{$reset_color%}:%B%{$fg[cyan]%}%0~%{$reset_color%} "\$vcs_info_msg_0_$'\n'"%B%(?.%F{33}.%F{red})%b "
 
+# export PS1=$'\n'"%B%F{33}%n%{$reset_color%}@%B%F{33}%m%{$reset_color%}:%B%{$fg[cyan]%}%0~%{$reset_color%} "\$vcs_info_msg_0_$'\n'"%B%(?.%F{33}.%F{red})%b "
 
-export RPROMPT='%*'
+# export RPROMPT='%*'
 
 #autoload -Uz compinit; compinit
 
