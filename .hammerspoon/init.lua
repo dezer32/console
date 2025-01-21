@@ -1,4 +1,4 @@
-local hyper = { "cmd", "shift", "ctrl" }
+local hyper = { "cmd", "shift", "ctrl" } 
 local cc = { "cmd", "ctrl" }
 local co = { "shift", "alt" }
 
@@ -56,8 +56,7 @@ bindAppWithNameToKey("Standard Notes", "N")
 bindAppWithNameToKey("Dash", "H")
 bindAppWithNameToKey("KeePassXC", "K")
 bindAppWithNameToKey("GoLand", "G")
-bindAppWithNameToKey("Firefox", "B")
-bindAppWithNameToKey("PhpStorm", "P")
+bindAppWithNameToKey("Brave Browser", "B")
 bindAppWithNameToKey("Telegram", "M")
 bindAppWithNameToKey("Obsidian", "O")
 --------------------------------------------------------------------------------
