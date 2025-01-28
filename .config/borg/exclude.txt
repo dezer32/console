@@ -1,4 +1,9 @@
 *.tmp
 *.log
-~/Applications/
-~/Library/
+$HOME/Applications/
+$HOME/Library/
+$HOME/Code/go/
+$HOME/.cache/
+$HOME/.zcompdump*
+$HOME/.nvm/
+$HOME/.npm/

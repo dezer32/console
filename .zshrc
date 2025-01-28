@@ -171,6 +171,7 @@ alias vim="nvim"
 alias lg="lazygit"
 
 alias bu="brew update && brew upgrade && brew upgrade --greedy"
+alias backup="~/.backup.sh"
 
 function enable_nvm ()
 {
