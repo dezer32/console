@@ -229,6 +229,8 @@ export PATH="${HOMEBREW_PREFIX}/opt/libpq/bin:$PATH"
 export PATH="${HOMEBREW_PREFIX}/opt/ruby/bin:$PATH"
 export PATH="${HOMEBREW_PREFIX}/opt/openssh/bin:$PATH"
 
+export PATH="${GOPATH}/bin:${PATH}"
+
 export SSH_AUTH_SOCK="${HOME}/.gnupg/S.gpg-agent.ssh"
 
 export DOCKER_DEFAULT_PLATFORM=linux/arm64/v8
