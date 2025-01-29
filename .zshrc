@@ -172,6 +172,7 @@ alias lg="lazygit"
 
 alias bu="brew update && brew upgrade && brew upgrade --greedy"
 alias backup="~/.backup.sh"
+alias extbackup="~/.external_backup.sh"
 
 function enable_nvm ()
 {

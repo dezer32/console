@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Параметры
-REPO="$HOME/.backup"
+REPO="/Volumes/Storage/Backups/Repository/$(hostname)"
 if ! [ -d $REPO ]; then
   mkdir -p $REPO
   borg init --encryption=repokey $REPO
@@ -37,4 +37,4 @@ BORG_REPO="$REPO" BORG_PASSCOMMAND="$PASSCOMMAND" borg create \
   --exclude "*.log"
 
 # Очистка старых бэкапов
-BORG_REPO="$REPO" BORG_PASSCOMMAND="$PASSCOMMAND" borg prune -v --list --keep-daily=7 --keep-weekly=4 --keep-monthly=6
+BORG_REPO="$REPO" BORG_PASSCOMMAND="$PASSCOMMAND" borg prune -v --list --keep-daily=7 --keep-weekly=4 --keep-monthly=24
