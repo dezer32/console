@@ -238,6 +238,8 @@ export SSH_AUTH_SOCK="${HOME}/.gnupg/S.gpg-agent.ssh"
 export DOCKER_DEFAULT_PLATFORM=linux/arm64/v8
 export BAT_THEME="gruvbox-dark"
 
+export BORG_PASSCOMMAND="/usr/bin/security find-generic-password -a backup -s backup_passphrase -w"
+
 # zsh
 eval "$(fzf --zsh)"
 
