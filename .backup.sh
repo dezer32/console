@@ -4,7 +4,7 @@
 REPO="$HOME/.backup"
 if ! [ -d $REPO ]; then
   mkdir -p $REPO
-  borg init --encryption=repokey $REPO
+  $HOME/.local/bin/borg init --encryption=repokey $REPO
 fi
 
 # security add-generic-password -a backup -s backup_passphrase -w
@@ -13,7 +13,7 @@ BACKUP_NAME="daily-$(date +%Y-%m-%d)"
 SOURCE="$HOME"
 
 # Создание бэкапа
-BORG_REPO="$REPO" BORG_PASSCOMMAND="$PASSCOMMAND" borg create \
+BORG_REPO="$REPO" BORG_PASSCOMMAND="$PASSCOMMAND" $HOME/.local/bin/borg create \
   --noxattrs \
   --progress \
   --stats \
@@ -21,6 +21,7 @@ BORG_REPO="$REPO" BORG_PASSCOMMAND="$PASSCOMMAND" borg create \
   --exclude "$HOME/Applications/" \
   --exclude "$HOME/Library/" \
   --exclude "$HOME/Code/Go/" \
+  --exclude "$HOME/OrbStack/" \
   --exclude "$HOME/.Trash/" \
   --exclude "$HOME/.cache/" \
   --exclude "$HOME/.zcompdump*" \
@@ -37,4 +38,4 @@ BORG_REPO="$REPO" BORG_PASSCOMMAND="$PASSCOMMAND" borg create \
   --exclude "*.log"
 
 # Очистка старых бэкапов
-BORG_REPO="$REPO" BORG_PASSCOMMAND="$PASSCOMMAND" borg prune -v --list --keep-daily=7 --keep-weekly=4 --keep-monthly=6
+BORG_REPO="$REPO" BORG_PASSCOMMAND="$PASSCOMMAND" $HOME/.local/bin/borg prune -v --list --keep-daily=7 --keep-weekly=4 --keep-monthly=6

@@ -21,6 +21,7 @@ BORG_REPO="$REPO" BORG_PASSCOMMAND="$PASSCOMMAND" borg create \
   --exclude "$HOME/Applications/" \
   --exclude "$HOME/Library/" \
   --exclude "$HOME/Code/Go/" \
+  --exclude "$HOME/OrbStack/" \
   --exclude "$HOME/.Trash/" \
   --exclude "$HOME/.cache/" \
   --exclude "$HOME/.zcompdump*" \
