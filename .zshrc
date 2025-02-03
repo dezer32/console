@@ -182,6 +182,9 @@ function enable_nvm ()
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 }
 
+#enable by defaul
+enable_nvm
+
 #Красивый вывод mysql
 export MYSQL_PS1="mysql: \d|> "
 
