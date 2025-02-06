@@ -249,6 +249,20 @@ eval "$(fzf --zsh)"
 # fzf configuration
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 bindkey "ç" fzf-cd-widget
+FZF_FD_OPTS="--hidden --follow --no-ignore --exclude '.git'"
+
+export FZF_DEFAULT_COMMAND="fd ${FZF_FD_OPTS}"
+export FZF_CTRL_T_COMMAND="fd ${FZF_FD_OPTS}"
+export FZF_ALT_C_COMMAND="fd --type d ${FZF_FD_OPTS}"
+
+_fzf_compgen_path() {
+  fd ${FZF_FD_OPTS} . "${1}"
+}
+
+_fzf_compgen_dir() {
+  fd --type d ${FZF_FD_OPTS} . "${1}"
+}
+
 export FZF_CTRL_T_OPTS="
   --preview 'bat -n --color=always {}'
     --bind 'ctrl-/:change-preview-window(down|hidden|)'"
