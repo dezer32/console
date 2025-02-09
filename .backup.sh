@@ -13,7 +13,7 @@ BACKUP_NAME="daily-$(date +%Y-%m-%d)"
 SOURCE="$HOME"
 
 # Создание бэкапа
-BORG_REPO="$REPO" BORG_PASSCOMMAND="$PASSCOMMAND" $HOME/.local/bin/borg create \
+BORG_REPO="$REPO" BORG_PASSCOMMAND="$PASSCOMMAND" $(which borg) create \
   --noxattrs \
   --progress \
   --stats \
@@ -38,4 +38,4 @@ BORG_REPO="$REPO" BORG_PASSCOMMAND="$PASSCOMMAND" $HOME/.local/bin/borg create \
   --exclude "*.log"
 
 # Очистка старых бэкапов
-BORG_REPO="$REPO" BORG_PASSCOMMAND="$PASSCOMMAND" $HOME/.local/bin/borg prune -v --list --keep-daily=7 --keep-weekly=4 --keep-monthly=6
+BORG_REPO="$REPO" BORG_PASSCOMMAND="$PASSCOMMAND" $(which borg) prune -v --list --keep-daily=7 --keep-weekly=4 --keep-monthly=6
