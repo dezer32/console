@@ -34,6 +34,7 @@ BORG_REPO="$REPO" BORG_PASSCOMMAND="$PASSCOMMAND" $(which borg) create \
   --exclude "*/.git/" \
   --exclude "*/vendor/" \
   --exclude "*/node_modules/" \
+  --exclude "*/var/" \
   --exclude "*.tmp" \
   --exclude "*.log"
 
