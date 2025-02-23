@@ -31,6 +31,7 @@ BORG_REPO="$REPO" BORG_PASSCOMMAND="$PASSCOMMAND" $(which borg) create \
   --exclude "$HOME/.gradle" \
   --exclude "$HOME/.konan" \
   --exclude "$HOME/.backup" \
+  --exclude "$HOME/.tldrc" \
   --exclude "*/.git/" \
   --exclude "*/vendor/" \
   --exclude "*/node_modules/" \
