@@ -40,4 +40,4 @@ BORG_REPO="$REPO" BORG_PASSCOMMAND="$PASSCOMMAND" /opt/homebrew/bin/borg create 
   --exclude "*.log"
 
 # Очистка старых бэкапов
-BORG_REPO="$REPO" BORG_PASSCOMMAND="$PASSCOMMAND" /opt/homebrew/bin/borg prune -v --list --keep-daily=7 --keep-weekly=4 --keep-monthly=6
+BORG_REPO="$REPO" BORG_PASSCOMMAND="$PASSCOMMAND" /opt/homebrew/bin/borg prune -v --list --keep-daily=7 --keep-weekly=4 --keep-monthly=12
