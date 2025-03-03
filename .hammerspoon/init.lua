@@ -56,7 +56,7 @@ bindAppWithNameToKey("Standard Notes", "N")
 bindAppWithNameToKey("Dash", "H")
 bindAppWithNameToKey("KeePassXC", "K")
 bindAppWithNameToKey("GoLand", "G")
-bindAppWithNameToKey("Brave Browser", "B")
+bindAppWithNameToKey("Firefox", "B")
 bindAppWithNameToKey("Telegram", "M")
 bindAppWithNameToKey("Obsidian", "O")
 --------------------------------------------------------------------------------
