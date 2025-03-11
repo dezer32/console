@@ -13,12 +13,13 @@ BACKUP_NAME="daily-$(date +%Y-%m-%d)"
 SOURCE="$HOME"
 
 # Создание бэкапа
-BORG_REPO="$REPO" BORG_PASSCOMMAND="$PASSCOMMAND" /opt/homebrew/bin/borg create \
+BORG_REPO="$REPO" BORG_PASSCOMMAND="$PASSCOMMAND" caffeinate -i /opt/homebrew/bin/borg create \
   --noxattrs \
   --progress \
   --stats \
   "::$BACKUP_NAME" "$SOURCE" \
   --exclude "$HOME/Applications/" \
+  --exclude "$HOME/Downloads/no_backup/" \
   --exclude "$HOME/Library/" \
   --exclude "$HOME/Code/Go/" \
   --exclude "$HOME/OrbStack/" \
@@ -40,4 +41,4 @@ BORG_REPO="$REPO" BORG_PASSCOMMAND="$PASSCOMMAND" /opt/homebrew/bin/borg create 
   --exclude "*.log"
 
 # Очистка старых бэкапов
-BORG_REPO="$REPO" BORG_PASSCOMMAND="$PASSCOMMAND" /opt/homebrew/bin/borg prune -v --list --keep-daily=7 --keep-weekly=4 --keep-monthly=12
+BORG_REPO="$REPO" BORG_PASSCOMMAND="$PASSCOMMAND" caffeinate -i /opt/homebrew/bin/borg prune -v --list --keep-daily=7 --keep-weekly=4 --keep-monthly=12
