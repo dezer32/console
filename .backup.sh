@@ -19,7 +19,7 @@ BORG_REPO="$REPO" BORG_PASSCOMMAND="$PASSCOMMAND" caffeinate -i /opt/homebrew/bi
   --stats \
   "::$BACKUP_NAME" "$SOURCE" \
   --exclude "$HOME/Applications/" \
-  --exclude "$HOME/Downloads/no_backup/" \
+  --exclude "$HOME/Downloads/" \
   --exclude "$HOME/Library/" \
   --exclude "$HOME/Code/Go/" \
   --exclude "$HOME/OrbStack/" \
