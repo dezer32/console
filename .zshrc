@@ -1,6 +1,7 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 export XDG_CONFIG_HOME="$HOME/.config"
+export ANDROID_HOME="$HOME/Library/Android/sdk"
 
 #Для подгрузки автокомплита с homebrew
 #сперва проверяем наличие brew
