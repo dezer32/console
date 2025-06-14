@@ -102,7 +102,7 @@ function windowBottom()
 	return frame
 end
 
-hs.hotkey.bind(hyper, "F", function()
+hs.hotkey.bind(hyper, "W", function()
 	hs.window.focusedWindow():setFrame(currentScreenFrame())
 end)
 
