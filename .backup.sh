@@ -33,6 +33,7 @@ BORG_REPO="$REPO" BORG_PASSCOMMAND="$PASSCOMMAND" caffeinate -i /opt/homebrew/bi
   --exclude "$HOME/.konan" \
   --exclude "$HOME/.backup" \
   --exclude "$HOME/.tldrc" \
+  --exclude "$HOME/.config/.android" \
   --exclude "*/.git/" \
   --exclude "*/vendor/" \
   --exclude "*/node_modules/" \
