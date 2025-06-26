@@ -135,7 +135,7 @@ map gd <Action>(GotoDeclaration)
 map gi <Action>(GotoImplementation)
 map <leader>fm <Action>(ReformatCode)
 map <leader>fo <Action>(GotoFile)
-map <leader>fw <Action>(FindInPath)
+map <leader>ff <Action>(FindInPath)
 map <leader>fc <Action>(GotoClass)
 map <leader>fa <Action>(GotoAction)
 map <leader>fb <Action>(RecentFiles)
@@ -167,6 +167,7 @@ let NERDTreeMapCloseDir="\h"
 
 Plug 'easymotion/vim-easymotion'
 nmap <leader>F <Plug>(easymotion-bd-f2)
+nmap <leader>fw <Plug>(easymotion-bd-f2)
 "nmap F <Plug>(easymotion-bd-f2)
 map <leader>fj <Plug>(easymotion-j)
 map <leader>fk <Plug>(easymotion-k)
