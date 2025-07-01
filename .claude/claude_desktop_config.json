@@ -1,0 +1,61 @@
+{
+  "mcpServers": {
+    "memory": {
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "-v", "/Users/vladislav_k/.mcp-memory/share/chroma_db:/app/chroma_db",
+        "-v", "/Users/vladislav_k/.mcp-memory/share/backups:/app/backups",
+        "mcp-memory-service:latest"
+      ],
+      "env": {
+        "MCP_MEMORY_CHROMA_PATH": "/app/chroma_db",
+        "MCP_MEMORY_BACKUPS_PATH": "/app/backups"
+      }
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/Users/vladislav_k/Documents/Claude"
+      ]
+    },
+    "everything": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-everything"
+      ]
+    },
+    "fetch": {
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "mcp/fetch"
+      ]
+    },
+    "sequential-thinking": {
+      "command": "docker",
+      "args": [
+        "run",
+        "--rm",
+        "-i",
+        "mcp/sequentialthinking"
+      ]
+    },
+    "time": {
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "mcp/time"
+      ]
+    }
+  }
+}
