@@ -1,0 +1,19 @@
+CREATE it and populate it with valid information, including:
+  - Project Overview
+  - Architecture
+    - Core components (API, Data, Service layers, configuration, etc)
+    - Data Model, if the project has a database component
+    - API endpoints, if the project exposes endpoints to be consumed
+    - Technology stack (Language, frameworks, etc)
+    - Project structure
+    - Testing strategy, if the project uses unit or integration testing
+    - Development commands (to build,Data Model, if the project has a database component
+    - API endpoints, if the project exposes endpoints to be consumed
+    - Technology stack (Language, frameworks, etc)
+    - Project structure
+    - Testing strategy, if the project uses unit or integration tests.
+    - Development commands (for building, running, etc).
+    - Environment setup (how the development environment is currently set up for the project)
+    - Development guidelines (rules to follow when modifying the project)
+    - Security considerations (things to keep in mind that are security-focused when modifying the project)
+    - Future considerations (things that we may not be adding right away but would be candidates for future versions)

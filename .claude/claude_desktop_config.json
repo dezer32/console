@@ -6,8 +6,8 @@
         "run",
         "-i",
         "--rm",
-        "-v", "/Users/vladislav_k/.mcp-memory/share/chroma_db:/app/chroma_db",
-        "-v", "/Users/vladislav_k/.mcp-memory/share/backups:/app/backups",
+        "-v", "/Users/*username*/.mcp-memory/share/chroma_db:/app/chroma_db",
+        "-v", "/Users/*username*/.mcp-memory/share/backups:/app/backups",
         "mcp-memory-service:latest"
       ],
       "env": {
@@ -20,7 +20,7 @@
       "args": [
         "-y",
         "@modelcontextprotocol/server-filesystem",
-        "/Users/vladislav_k/Documents/Claude"
+        "/Users/*username*/Documents/Claude"
       ]
     },
     "everything": {
