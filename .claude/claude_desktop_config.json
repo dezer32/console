@@ -56,6 +56,10 @@
         "--rm",
         "mcp/time"
       ]
+    },
+    "andorid": {
+      "command": "uv",
+      "args": ["--directory", "/Users/vladislav_k/Code/mcp/android-mcp-server", "run", "server.py"]
     }
   }
 }
