@@ -293,4 +293,3 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # export PATH="$(gem env gemhome)/bin:$PATH"
 
 
-alias claude="/Users/vladislav_k/.claude/local/claude"
