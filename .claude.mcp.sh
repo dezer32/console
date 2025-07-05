@@ -21,6 +21,10 @@ CMD ["context7-mcp"]
 EOF
 echo 'Done building context7-mcp Docker image.'
 
+echo 'Building mcp-memory-service Docker image...'
+docker buildx build -t mcp-memory-service git@github.com:dezer32/mcp-memory-service.git
+echo 'Done building mcp-memory-service Docker image.'
+
 claude mcp add context7             -- docker run -i --rm context7-mcp-image
 claude mcp add everything           -- docker run -i --rm mcp/everything
 # claude mcp add memory               -- docker run -i --rm \
@@ -29,11 +33,17 @@ claude mcp add everything           -- docker run -i --rm mcp/everything
   # -e MCP_MEMORY_CHROMA_PATH='/app/chroma_db' \
   # -e MCP_MEMORY_BACKUPS_PATH='/app/backups' \
   # mcp-memory-service:latest
+# claude mcp add memory               -- docker run -i --rm \
+                                        # -v claude-memory:/app/dist \
+                                        # -v ${HOME}/.mcp-memory/default:${HOME}/.mcp-memory/default \
+                                        # -e MEMORY_FILE_PATH="${HOME}/.mcp-memory/default/memory.json" \
+                                        # mcp/memory
 claude mcp add memory               -- docker run -i --rm \
-                                        -v claude-memory:/app/dist \
-                                        -v ${HOME}/.mcp-memory/default:${HOME}/.mcp-memory/default \
-                                        -e MEMORY_FILE_PATH="${HOME}/.mcp-memory/default/memory.json" \
-                                        mcp/memory
+  -v ${HOME}/.mcp-memory/share/chroma_db:/app/chroma_db \
+  -v ${HOME}/.mcp-memory/share/backups:/app/backups \
+  -e MCP_MEMORY_CHROMA_PATH='/app/chroma_db' \
+  -e MCP_MEMORY_BACKUPS_PATH='/app/backups' \
+  mcp-memory-service:latest
 claude mcp add fetch                -- docker run -i --rm mcp/fetch
 claude mcp add sequential-thinking  -- docker run -i --rm mcp/sequentialthinking
 claude mcp add time                 -- docker run -i --rm mcp/time
