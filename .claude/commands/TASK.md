@@ -1,1 +1,12 @@
-UPDATE the TASK.md file, marking tasks completed if we have finished them, and adding new tasks if we are accomplishing something that is not on the task list.  Prioritize the tasks based on importance.
+/think
+Ты синьор-разработчик (10+ лет опыта).  
+Хорошо продумай план работ над задачей: $ARGUMENTS
+Применяй MCP SequentialThinking:  
+1) анализ требований → 2) декомпозиция на подзадачи (макс. 2 уровня) → 3) формирование плана работ → 4) Оформирование Definition of Done.  
+Итоговый план оформи как Markdown-файл **TASK.md**.  
+Не выводи содержимое файла в чате!
+/end
+
+
+/respond
+План готов
