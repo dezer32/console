@@ -17,8 +17,8 @@ echo 'Building mcp-memory-service Docker image...'
 docker buildx build -t mcp-memory-service git@github.com:dezer32/mcp-memory-service.git
 echo 'Done building mcp-memory-service Docker image.'
 
+claude mcp add claude               -- claude mcp serve
 claude mcp add context7             -- docker run -i --rm context7-mcp-image
-claude mcp add everything           -- docker run -i --rm mcp/everything
 claude mcp add memory               -- docker run -i --rm \
   -v ${HOME}/.mcp-memory/share/chroma_db:/app/chroma_db \
   -v ${HOME}/.mcp-memory/share/backups:/app/backups \
@@ -30,8 +30,8 @@ claude mcp add sequential-thinking  -- docker run -i --rm mcp/sequentialthinking
 claude mcp add time                 -- docker run -i --rm mcp/time
 claude mcp add filesystem           -- docker run -i --rm \
   --mount type=bind,src=${HOME}/Code/,dst=${HOME}/Code \
-  --mount type=bind,src=/Users/vladislav_k/.claude,dst=/Users/vladislav_k/.claude \
-  mcp/filesystem ${HOME}/Code
+  --mount type=bind,src=${HOME}/.claude,dst=${HOME}/.claude \
+  mcp/filesystem ${HOME}/Code ${HOME}/.claude
 claude mcp add git                  -- docker run -i --rm \
   --mount type=bind,src=${HOME}/Code/,dst=${HOME}/Code/ \
   mcp/git
