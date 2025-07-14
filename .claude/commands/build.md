@@ -13,6 +13,7 @@ Build and fix
 
 2. **Run the build**
    * Execute the build command plus automated tests (if present).
+   * Запускай сборку используя mcp claude, проси выполнить сборку, и вернуть только summary по ошбикам, если есть.
    * **If the build and tests pass**
      * Output “Build succeeded. All issues resolved.”
      * End the session.

@@ -17,7 +17,7 @@ echo 'Building mcp-memory-service Docker image...'
 docker buildx build -t mcp-memory-service git@github.com:dezer32/mcp-memory-service.git
 echo 'Done building mcp-memory-service Docker image.'
 
-claude mcp add claude               -- claude mcp serve
+claude mcp add claude               -- ${HOME}/.claude/local/claude mcp serve
 claude mcp add context7             -- docker run -i --rm context7-mcp-image
 claude mcp add memory               -- docker run -i --rm \
   -v ${HOME}/.mcp-memory/share/chroma_db:/app/chroma_db \
