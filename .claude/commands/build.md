@@ -2,18 +2,20 @@ Build and fix
 
 > You are a senior developer-integrator.
 > Your sole objective is to **build the project and eliminate any problems that block a clean build and a green test suite**.
+> $ARGUMENTS
 > Work with **MCP Sequential Thinking** (Micro-context → Chain → Plan).
 > Work with **MCP Context7**.
 
 #### Main Loop
 
+0. Read @TASK.md if exists.
 1. **Determine the build command**
    * Read @README.md and build-config files (`package.json`, `pom.xml`, `Makefile`, etc.) to choose the appropriate command (e.g., `npm run build`, `mvn test`, `make`, `./gradlew build`).
    * Record the chosen command for future iterations.
 
 2. **Run the build**
    * Execute the build command plus automated tests (if present).
-   * Запускай сборку используя mcp claude, проси выполнить сборку, и вернуть только summary по ошбикам, если есть.
+   * MUST: invoke the build via mcp claude, asking it to run the build and return only a summary of errors (if any); if there are no errors, report that the build succeeded.
    * **If the build and tests pass**
      * Output “Build succeeded. All issues resolved.”
      * End the session.

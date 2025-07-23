@@ -175,6 +175,9 @@ alias bu="brew update && brew upgrade && brew upgrade --greedy"
 alias backup="~/.backup.sh"
 alias extbackup="~/.external_backup.sh"
 
+alias mp="mcp-proxy -config ~/.claude/mcp-proxy.json"
+alias memai="docker run -i --rm --name memory_ai -v /Users/vladislav_k/.mcp-memory/share/chroma_db:/app/chroma_db -v /Users/vladislav_k/.mcp-memory/share/backups:/app/backups -e MCP_MEMORY_CHROMA_PATH=/app/chroma_db -e MCP_MEMORY_BACKUPS_PATH=/app/backups mcp-memory-service:latest"
+
 function enable_nvm ()
 {
   [ -d "$HOME/.nvm" ] || mkdir -p "$HOME/.nvm"

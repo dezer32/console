@@ -1,65 +1,62 @@
 {
   "mcpServers": {
     "memory": {
-      "command": "docker",
+      "command": "npx",
       "args": [
-        "run",
-        "-i",
-        "--rm",
-        "-v", "/Users/*username*/.mcp-memory/share/chroma_db:/app/chroma_db",
-        "-v", "/Users/*username*/.mcp-memory/share/backups:/app/backups",
-        "mcp-memory-service:latest"
-      ],
-      "env": {
-        "MCP_MEMORY_CHROMA_PATH": "/app/chroma_db",
-        "MCP_MEMORY_BACKUPS_PATH": "/app/backups"
-      }
+        "mcp-remote",
+        "http://localhost:9090/memory/mcp"
+      ]
     },
     "filesystem": {
       "command": "npx",
       "args": [
-        "-y",
-        "@modelcontextprotocol/server-filesystem",
-        "/Users/*username*/Documents/Claude"
+        "mcp-remote",
+        "http://localhost:9090/filesystem/mcp"
       ]
     },
-    "everything": {
+    "git": {
       "command": "npx",
       "args": [
-        "-y",
-        "@modelcontextprotocol/server-everything"
-      ]
-    },
-    "fetch": {
-      "command": "docker",
-      "args": [
-        "run",
-        "-i",
-        "--rm",
-        "mcp/fetch"
-      ]
-    },
-    "sequential-thinking": {
-      "command": "docker",
-      "args": [
-        "run",
-        "--rm",
-        "-i",
-        "mcp/sequentialthinking"
+        "mcp-remote",
+        "http://localhost:9090/git/mcp"
       ]
     },
     "time": {
-      "command": "docker",
+      "command": "npx",
       "args": [
-        "run",
-        "-i",
-        "--rm",
-        "mcp/time"
+        "mcp-remote",
+        "http://localhost:9090/time/mcp"
       ]
     },
-    "andorid": {
-      "command": "uv",
-      "args": ["--directory", "/Users/vladislav_k/Code/mcp/android-mcp-server", "run", "server.py"]
+    "context7": {
+      "command": "npx",
+      "args": [
+        "mcp-remote",
+        "http://localhost:9090/context7/mcp"
+      ]
+    },
+    "sequential-thinking": {
+      "command": "npx",
+      "args": [
+        "mcp-remote",
+        "http://localhost:9090/sequential-thinking/mcp"
+      ]
+    },
+    "fetch": {
+      "command": "npx",
+      "args": [
+        "mcp-remote",
+        "http://localhost:9090/fetch/mcp"
+      ]
+    },
+    "claude": {
+      "type": "stdio",
+      "command": "/Users/vladislav_k/.claude/local/claude",
+      "args": [
+        "mcp",
+        "serve"
+      ],
+      "env": {}
     }
   }
 }
