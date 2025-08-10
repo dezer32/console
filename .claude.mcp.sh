@@ -93,6 +93,9 @@ claude mcp remove --scope local repomix
 claude mcp remove --scope user claude
 claude mcp remove --scope local claude
 
+claude mcp remove --scope user codex
+claude mcp remove --scope local codex
+
 claude mcp add --scope user filesystem -- npx -y @modelcontextprotocol/server-filesystem /Users/vladislav_k/Code/ /Users/vladislav_k/Downloads/ /Users/vladislav_k/Documents/
 # claude mcp add --scope user context7 -- npx -y @upstash/context7-mcp
 claude mcp add --scope user context7             -- docker run -i --rm context7-mcp-image
@@ -107,3 +110,4 @@ claude mcp add --scope user sequential-thinking -- npx -y @modelcontextprotocol/
 claude mcp add --scope user fetch -- uvx mcp-server-fetch
 claude mcp add --scope user repomix -- repomix --mcp
 claude mcp add --scope user claude -- /Users/vladislav_k/.claude/local/claude mcp serve
+claude mcp add --scope user codex -- codex -m gpt-5 mcp

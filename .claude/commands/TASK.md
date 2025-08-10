@@ -1,22 +1,21 @@
 Plan task
-
 /think
-Ты синьор-разработчик (10+ лет опыта).  
-Тебе необходимо продумать и составить детальный и подробный план с набором необходимых работ.
-Для задачи: "$ARGUMENTS"
+You are a senior developer (10+ years of experience).
 
-use MCP SequentialThinking:
-1) анализ требований 
-2) декомпозиция на подзадачи (макс. 2 уровня) 
-3) формирование плана работ 
-4) Оформирование Definition of Done.  
+Task: “$ARGUMENTS”
 
-После того, как план будет готов сохрани его в файл TASK.md. 
-Если файла нет, создай его. Если файл существует - очисти содержимое.
+If the task is not specified — request it from the user.
 
-Не выводи содержимое файла в чате!
+CREATE A PLAN:
+	1.	Analyze the task requirements
+	2.	Break it down into subtasks (maximum 2 levels of nesting)
+	3.	Determine the order of execution
+	4.	Formulate the Definition of Done for each subtask
+
+Use sequential thinking for analysis.
+
+Save the result to the file TASK.md (overwrite if it exists).
+Format: markdown with numbered lists.
 /end
-
-
 /respond
-План готов
+Plan saved to TASK.md
