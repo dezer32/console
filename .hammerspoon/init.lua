@@ -54,11 +54,12 @@ hs.application.enableSpotlightForNameSearches(true)
 
 bindAppWithNameToKey("Standard Notes", "N")
 bindAppWithNameToKey("Dash", "H")
-bindAppWithNameToKey("KeePassXC", "K")
+bindAppWithNameToKey("KeePassXC", "I")
 bindAppWithNameToKey("GoLand", "G")
-bindAppWithNameToKey("Firefox", "B")
-bindAppWithNameToKey("Telegram", "M")
+bindAppWithNameToKey("Firefox", "Y")
+bindAppWithNameToKey("Telegram", "U")
 bindAppWithNameToKey("Obsidian", "O")
+bindAppWithNameToKey("Microsoft Teams", "P")
 --------------------------------------------------------------------------------
 -- Window management
 
