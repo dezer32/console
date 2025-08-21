@@ -174,9 +174,7 @@ alias lg="lazygit"
 alias bu="brew update && brew upgrade && brew upgrade --greedy"
 alias backup="~/.backup.sh"
 alias extbackup="~/.external_backup.sh"
-
-alias mp="mcp-proxy -config ~/.claude/mcp-proxy.json"
-alias memai="docker run -i --rm --name memory_ai -v /Users/vladislav_k/.mcp-memory/share/chroma_db:/app/chroma_db -v /Users/vladislav_k/.mcp-memory/share/backups:/app/backups -e MCP_MEMORY_CHROMA_PATH=/app/chroma_db -e MCP_MEMORY_BACKUPS_PATH=/app/backups mcp-memory-service:latest"
+alias crypt_drive="mega-webdav /data > /dev/null 2>&1 || true && rclone mount mega-crypt: ~/Crypt --vfs-cache-mode writes --vfs-cache-max-age 1h --vfs-cache-max-size 10G --daemon-timeout=10s --umask 022 --allow-other --file-perms 0644 --dir-perms 0755 --daemon"
 
 function enable_nvm ()
 {
@@ -229,7 +227,7 @@ export GPG_TTY=$(tty)
 export EDITOR=vim
 export GOPATH="${HOME}/Code/go"
 
-export PATH="${HOME}/.composer/vendor/bin:${PATH}"
+export PATH="${HOME}/.local/bin:${HOME}/.composer/vendor/bin:${PATH}"
 export PATH="${HOME}/.jetbrains/bin:${PATH}"
 # export PATH="${HOME}/Library/Python/3.9/bin:$PATH"
 export PATH="$(brew --prefix python)/libexec/bin:${PATH}"

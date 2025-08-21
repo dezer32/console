@@ -60,6 +60,7 @@ bindAppWithNameToKey("Firefox", "Y")
 bindAppWithNameToKey("Telegram", "U")
 bindAppWithNameToKey("Obsidian", "O")
 bindAppWithNameToKey("Microsoft Teams", "P")
+bindAppWithNameToKey("OpenVPN Connect", ";")
 --------------------------------------------------------------------------------
 -- Window management
 
